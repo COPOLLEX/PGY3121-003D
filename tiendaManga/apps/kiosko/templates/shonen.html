@@ -1,0 +1,32 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block title %} Inicio {% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h3>Categoria Shonen</h3>
+    <div class="row mt-5">
+        {% for p in mangaShonen %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{p.img_url.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{p.name}}</h5>
+                  <p class="card-text">{{p.description}}</p>
+                  <a href="#" class="btn btn-primary">{{p.valor}}</a>
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

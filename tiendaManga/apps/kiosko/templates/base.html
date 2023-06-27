@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/api.css' %}">
+    <link rel="stylesheet" href="{% static 'css/darkMode.css' %}">
+    <title>Document</title>
+    {% block head %}
+    {% endblock %}
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <div class="logo">
+                    <img src="{% static 'img/berserkinho.png' %}" alt="" height="120px" >
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a style="color:red" class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="color:red" class="nav-link" href="/insanoLogin">Iniciar Sesion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="color:red" class="nav-link" href="/insanoRegister">Crear Cuenta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="color:red" class="nav-link" href="/addManga">AddProducts</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a style="color:red" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Mangas
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="/cargaSeinen">Seinen</a></li>
+                            <li><a class="dropdown-item" href="/cargaSpokon">Spokon</a></li>
+                            <li><a class="dropdown-item" href="/cargaShonen">Shonen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <button class="switchDark active h-50  " id="switch">
+                <span><i class="bi bi-brightness-high-fill"></i></span>
+                <span><i class="bi bi-moon-fill"></i></span>
+              </button>
+        </div>
+    </nav>
+    {% block body %}
+    {% endblock  %}
+    
+</body>
+{% block footer %}
+    
+{% endblock %}
+
+{% block script %}
+{% endblock %}
+<!-- read js-->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+crossorigin="anonymous"></script>
+
+<script src="../static/js/api.js"></script>  
+<script src="../static/js/darkMode.js"></script>
+</html>
